@@ -1,7 +1,7 @@
 ---
 
 import { fade, ViewTransitions } from 'astro:transitions'
-import { GeistMono } from 'geist/font/mono';
+
 
 
 
@@ -24,7 +24,7 @@ const pageTitle = [
 <!doctype html>
 <html 
 	lang="en"
-	transition:animate={fade({ duration: '1s' })}
+	transition:animate={fade({ duration: '0.5s' })}
 >
 	<head>
 		<meta charset="UTF-8" />
@@ -53,6 +53,13 @@ const pageTitle = [
 	</body>
 </html>
 <style is:global>
+	@font-face {
+		font-family: 'MonaspaceXenon';
+		src: url('/fonts/Monaspace Xenon Variable.woff') format('woff');
+		/* font-weight: normal;
+		font-style: normal; */
+		font-display: swap;
+	}
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -65,8 +72,9 @@ const pageTitle = [
 		);
 	}
 	html {
-		font-family: "Geist Mono", system-ui, sans-serif;
+		font-family: "MonaspaceXenon", system-ui, sans-serif;
 		font-size: 12px;
+		letter-spacing: -0.01em;
 		line-height: 1.2rem;
 		background: #13151a;
 		background-size: 224px;
@@ -75,7 +83,7 @@ const pageTitle = [
 	/* Light mode */
 	@media (prefers-color-scheme: light) {
 		html {
-			background: #fff;
+			background: #fdf6e3;
 		}
 	}
 
